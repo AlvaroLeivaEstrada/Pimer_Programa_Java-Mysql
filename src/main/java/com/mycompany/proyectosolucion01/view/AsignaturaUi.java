@@ -5,7 +5,10 @@
  */
 package com.mycompany.proyectosolucion01.view;
 
-import com.mycompany.proyectosolucion01.data.repository.AsignaturaRespository;
+import com.mycompany.dependencyproyect1.dao.entity.Asignatura;
+import com.mycompany.dependencyproyect1.dao.repository.AsignaturaRespository;
+
+
 
 /**
  *
@@ -127,8 +130,15 @@ public class AsignaturaUi extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AsignaturaRespository asignatura = new AsignaturaRespository();
-        asignatura.save(jTextField1.getText(),jTextField3.getText(),jTextField2.getText(),jTextField4.getText());
+        Asignatura asignatura = new Asignatura();
+        AsignaturaRespository asignaturaRepository = new AsignaturaRespository();
+        asignatura.setNombre(jTextField1.getText());
+        asignatura.setClave(jTextField3.getText());
+        asignatura.setCurso(jTextField2.getText());
+        asignatura.setTitulacion(jTextField4.getText());
+        
+        asignaturaRepository.save(asignatura);
+        
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");

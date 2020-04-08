@@ -5,17 +5,18 @@
  */
 package com.mycompany.proyectosolucion01.view;
 
-import com.mycompany.proyectosolucion01.data.entity.Asignatura;
-import com.mycompany.proyectosolucion01.data.entity.Directorio;
-import com.mycompany.proyectosolucion01.data.entity.Disco;
-import com.mycompany.proyectosolucion01.data.entity.Programa;
-import com.mycompany.proyectosolucion01.data.entity.TipoDocumento;
-import com.mycompany.proyectosolucion01.data.repository.AsignaturaRespository;
-import com.mycompany.proyectosolucion01.data.repository.DirectorioRepository;
-import com.mycompany.proyectosolucion01.data.repository.DiscoRepository;
-import com.mycompany.proyectosolucion01.data.repository.DocumentoRepository;
-import com.mycompany.proyectosolucion01.data.repository.ProgramaRepository;
-import com.mycompany.proyectosolucion01.data.repository.TipoDocumentoRepository;
+import com.mycompany.dependencyproyect1.dao.entity.Asignatura;
+import com.mycompany.dependencyproyect1.dao.entity.Directorio;
+import com.mycompany.dependencyproyect1.dao.entity.Disco;
+import com.mycompany.dependencyproyect1.dao.entity.Documento;
+import com.mycompany.dependencyproyect1.dao.entity.Programa;
+import com.mycompany.dependencyproyect1.dao.entity.TipoDocumento;
+import com.mycompany.dependencyproyect1.dao.repository.AsignaturaRespository;
+import com.mycompany.dependencyproyect1.dao.repository.DirectorioRepository;
+import com.mycompany.dependencyproyect1.dao.repository.DiscoRepository;
+import com.mycompany.dependencyproyect1.dao.repository.DocumentoRepository;
+import com.mycompany.dependencyproyect1.dao.repository.ProgramaRepository;
+import com.mycompany.dependencyproyect1.dao.repository.TipoDocumentoRepository;
 import java.util.List;
 
 /**
@@ -261,6 +262,7 @@ public class DocumentoUi extends javax.swing.JFrame {
         int idtipoDocumento = tipoDocumentoDataBaseHandler.getIdByNameTipoDocumento(tipoDocumentos, jComboBox5.getSelectedItem() + "");
         int idPrograma = programaDataBaseHandler.getIdByNamePrograma(programas, jComboBox3.getSelectedItem() + "");
         int idAsignatura = asignaturaDataBaseHandler.getIdByNameAsignatura(asignaturas, jComboBox4.getSelectedItem() + "");
+          
        documento.save(idDisco, idDirectorio, idtipoDocumento, idPrograma, idAsignatura, jTextField1.getText(), jTextField2.getText(), jTextField3.getText(), jTextField4.getText(), jTextField5.getText());
        
        
